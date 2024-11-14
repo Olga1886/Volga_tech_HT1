@@ -1,0 +1,150 @@
+{
+      "flowers": [
+          {
+            "path": "flowers/daisy/african_daisy_yellow.jpeg",
+            "color": "yellow",
+            "type": "daisy"
+          },
+          {
+            "path": "flowers/daisy/another_daisy_pink.jpeg",
+            "color": "pink",
+            "type": "daisy"
+
+          },
+          {
+            "path": "flowers/daisy/daisy_white.jpeg",
+            "color": "white",
+            "type": "daisy"
+          },
+          {
+            "path": "flowers/daisy/just_another_daisy_blue.jpeg",
+            "color": "blue",
+            "type": "daisy"
+          },
+          {
+            "path": "flowers/peony/black.jpeg",
+            "color": "black",
+            "type": "peony"
+          },
+          {
+            "path": "flowers/peony/flower_white.jpeg",
+            "color": "white",
+            "type": "peony"
+          },
+          {
+            "path": "flowers/peony/flowers_white.jpeg",
+            "color": "white",
+            "type": "peony"
+          },
+          {
+            "path": "flowers/peony/peony_violet.jpeg",
+            "color": "violet",
+            "type": "peony"
+          },
+          {
+            "path": "flowers/peony/peony_white.jpeg",
+            "color": "white",
+            "type": "peony"
+          },
+          {
+            "path": "flowers/peony/rose.jpeg",
+            "color": "rose",
+            "type": "peony"
+          },
+          {
+            "path": "flowers/peony/yellow.jpeg",
+            "color": "yellow",
+            "type": "peony"
+          },
+          {
+            "path": "flowers/rose/blue.jpeg",
+            "color": "blue",
+            "type": "rose"
+          },
+          {
+            "path": "flowers/rose/flower_orange.jpeg",
+            "color": "orange",
+            "type": "rose"
+          },
+          {
+            "path": "flowers/rose/flower_red.jpeg",
+            "color": "red",
+            "type": "rose"
+          },
+        {
+            "path": "flowers/rose/flower_violet.jpeg",
+            "color": "violet",
+            "type": "rose"
+          },
+          {
+            "path": "flowers/rose/pink.jpeg",
+            "color": "pink",
+            "type": "rose"
+          },
+          {
+            "path": "flowers/rose/red.jpeg",
+            "color": "red",
+            "type": "rose"
+          },
+          {
+            "path": "flowers/rose/rose_black.jpeg",
+            "color": "black",
+            "type": "rose"
+          },
+          {
+            "path": "flowers/rose/rose_pink.jpeg",
+            "color": "pink",
+            "type": "rose"
+          },
+          {
+            "path": "flowers/rose/rose_white.jpeg",
+            "color": "white",
+            "type": "rose"
+          },
+          {
+            "path": "flowers/rose/rose_yellow.jpeg",
+            "color": "yellow",
+            "type": "rose"
+          },
+          {
+            "path": "flowers/tulip/dark_dark_violet.jpeg",
+            "color": "violet",
+            "type": "tulip"
+          },
+          {
+            "path": "flowers/tulip/dark_violet.jpeg",
+            "color": "violet",
+            "type": "tulip"
+          },
+          {
+            "path": "flowers/tulip/flower_yellow.jpeg",
+            "color": "yellow",
+            "type": "tulip"
+          },
+          {
+            "path": "flowers/tulip/red.jpeg",
+            "color": "red",
+            "type": "tulip"
+          },
+          {
+            "path": "flowers/tulip/tulip_red.jpeg",
+            "color": "red",
+            "type": "tulip"
+          },
+          {
+            "path": "flowers/tulip/violet.jpeg",
+            "color": "violet",
+            "type": "tulip"
+          },
+          {
+            "path": "flowers/tulip/white.jpeg",
+            "color": "white",
+            "type": "tulip"
+          },
+          {
+            "path": "flowers/tulip/yellow.jpeg",
+            "color": "yellow",
+            "type": "tulip"
+          }
+      ]
+}
