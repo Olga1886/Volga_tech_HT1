@@ -1,0 +1,39 @@
+{
+    "cars": [
+        {
+            "path": "hatchback\\grey_toyota.jpeg",
+            "type": "hatchback",
+            "mark": "toyota"
+        },
+        {
+            "path": "hatchback\\red_mazda.jpeg",
+            "type": "hatchback",
+            "mark": "mazda"
+        },
+        {
+            "path": "hatchback\\subaru.jpeg",
+            "type": "hatchback",
+            "mark": "subaru"
+        },
+        {
+            "path": "hatchback\\typical_vw.jpeg",
+            "type": "hatchback",
+            "mark": "vw"
+        },
+        {
+            "path": "sedan\\emerald_bmw.jpeg",
+            "type": "sedan",
+            "mark": "bmw"
+        },
+        {
+            "path": "suv\\another_suv_toyota.jpeg",
+            "type": "suv",
+            "mark": "toyota"
+        },
+        {
+            "path": "suv\\suv_toyota.jpeg",
+            "type": "suv",
+            "mark": "toyota"
+        }
+    ]
+}
