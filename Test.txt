@@ -1,0 +1,62 @@
+﻿Python Installation & Virtual Environments
+Which of these are valid ways to create a virtual environment? Consider macOS, Linux, and Windows operating systems?
+
+1.python3 -m venv venv/
+2.python3 -m venv .venv
+3.python3 -m venv
+
+Answer: 1 and 2.
+
+How many versions of Django would ultimately exist on your machine if you ran the code like this?
+
+PS> python -m pip install django==2.2.26
+PS> python -m pip install django==5.1
+
+Answer: Only one version.
+
+What are the essential parts of a Python virtual environment?
+
+1.pyvenv.cfg file
+2.site-packages directory
+3.copy or a symlink of the Python binary
+4.copy of pip
+
+Answer: 1, 3, 4.
+
+
+Which script sets the VIRTUAL_ENV variable to the root folder path of your virtual environment and prepends the relative location of its Python executable to your PATH, while also changing the command prompt to the name that you passed when creating the virtual environment?
+
+1.activate
+2.deactivate.bat
+3.pip.exe
+4.python.exe
+
+Answer: 1.activate.
+
+What is the primary purpose of a requirements.txt file in a Python project?
+
+1.To list all Python files in the project
+2.To specify the Python version required for the project
+3.To list all dependencies and their versions for the project
+4.To configure the virtual environment settings
+5.To list all dependencies and their versions for the project
+
+Answer: 3.to list all dependencies an their versions for the project
+
+How do you deactivate an active virtual environment?
+
+1.exit
+2.deactivate
+3.quit venv
+4.python -m venv deactivate
+
+Answer: 2.deactivate.
+
+By default, do virtual environments include access to globally installed packages?
+
+1.Yes, all global packages are accessible
+2.No, virtual environments are completely isolated
+3.Only if specified during creation
+4.Only standard library packages are accessible
+
+Answer: 3.Only if specified during creation
