@@ -1,11 +1,11 @@
-﻿import os
+import os
 import re
 from string import punctuation
-import pymorphy2
+import pymorphy3
 import matplotlib.pyplot as plt
 from collections import Counter
 
-morph = pymorphy2.MorphAnalyzer()
+morph = pymorphy3.MorphAnalyzer()
 stop_words = {"в", "на", "с", "к", "от", "до", "из", "перед", "за", "под", "над", "между", "через", "около", "возле", "рядом", "против", "мимо", "сквозь", "по", "для", "без", "через", "у", "о", "об", "со", "и"}
 
 def preprocess_text(text):
@@ -31,22 +31,29 @@ def plot_histogram(word_counts, title):
     plt.show()
 
 def analyze_reviews(positive_dir, negative_dir):
+    if not os.path.isdir(positive_dir) or not os.path.isdir(negative_dir):
+        raise ValueError("Оба параметра должны быть путями к папкам.")
+
     positive_reviews = []
     negative_reviews = []
 
     for filename in os.listdir(positive_dir):
         try:
-            with open(os.path.join(positive_dir, filename), 'r', encoding='utf-8') as f:
-                text = f.read()
-                positive_reviews.append({"text": preprocess_text(text), "sentiment": "positive"})
+            file_path = os.path.join(positive_dir, filename)
+            if os.path.isfile(file_path):  # Проверка, является ли это файлом
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    text = f.read()
+                    positive_reviews.append({"text": preprocess_text(text), "sentiment": "positive"})
         except UnicodeDecodeError:
             print(f"Ошибка чтения файла {filename} в директории положительных отзывов.")
 
     for filename in os.listdir(negative_dir):
         try:
-            with open(os.path.join(negative_dir, filename), 'r', encoding='utf-8') as f:
-                text = f.read()
-                negative_reviews.append({"text": preprocess_text(text), "sentiment": "negative"})
+            file_path = os.path.join(negative_dir, filename)
+            if os.path.isfile(file_path):  # Проверка, является ли это файлом
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    text = f.read()
+                    negative_reviews.append({"text": preprocess_text(text), "sentiment": "negative"})
         except UnicodeDecodeError:
             print(f"Ошибка чтения файла {filename} в директории отрицательных отзывов.")
 
@@ -69,30 +76,8 @@ def analyze_reviews(positive_dir, negative_dir):
     print("Слова, встречающиеся только в отрицательных отзывах:", only_negative)
     print("Общие слова:", common_words)
 
-
-positive_reviews_dir = r"C:\Users\Lenovo\PycharmProjects\Volga_tech_HT1\HW4\reviews\positive.txt"
-negative_reviews_dir = r"C:\Users\Lenovo\PycharmProjects\Volga_tech_HT1\HW4\reviews\negative.txt"
+# Пример использования:
+positive_reviews_dir = r"C:\Users\Lenovo\PycharmProjects\Volga_tech_HT1\HW4\reviews\positive"
+negative_reviews_dir = r"C:\Users\Lenovo\PycharmProjects\Volga_tech_HT1\HW4\reviews\negative"
 
 analyze_reviews(positive_reviews_dir, negative_reviews_dir)
-
-#не выводится ответ, выдает:Traceback (most recent call last):
-# File "C:\Users\Lenovo\PycharmProjects\Volga_tech_HT1\HW4\HW4_task.1.py", line 8, in <module>
-#    morph = pymorphy2.MorphAnalyzer()
-# File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\pymorphy2\analyzer.py", line 224, in __init__
-#    self._init_units(units)
-#    ~~~~~~~~~~~~~~~~^^^^^^^
-#  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\pymorphy2\analyzer.py", line 235, in _init_units
-#    self._units.append((self._bound_unit(unit), False))
-#                       ~~~~~~~~~~~~~~~~^^^^^^
-#  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\pymorphy2\analyzer.py", line 246, in _bound_unit
-#    unit = unit.clone()
-#  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\pymorphy2\units\base.py", line 35, in clone
-#    return self.__class__(**self._get_params())
-#                           ~~~~~~~~~~~~~~~~^^
-#  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\pymorphy2\units\base.py", line 76, in _get_params
-#    (key, getattr(self, key, None)) for key in self._get_param_names()
-#                                               ~~~~~~~~~~~~~~~~~~~~~^^
-#  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\pymorphy2\units\base.py", line 70, in _get_param_names
-#    args, varargs, kw, default = inspect.getargspec(cls.__init__)
-#                                 ^^^^^^^^^^^^^^^^^^
-# AttributeError: module 'inspect' has no attribute 'getargspec'. Did you mean: 'getargs'?
