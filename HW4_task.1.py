@@ -31,29 +31,22 @@ def plot_histogram(word_counts, title):
     plt.show()
 
 def analyze_reviews(positive_dir, negative_dir):
-    if not os.path.isdir(positive_dir) or not os.path.isdir(negative_dir):
-        raise ValueError("Оба параметра должны быть путями к папкам.")
-
     positive_reviews = []
     negative_reviews = []
 
     for filename in os.listdir(positive_dir):
         try:
-            file_path = os.path.join(positive_dir, filename)
-            if os.path.isfile(file_path):  # Проверка, является ли это файлом
-                with open(file_path, 'r', encoding='utf-8') as f:
-                    text = f.read()
-                    positive_reviews.append({"text": preprocess_text(text), "sentiment": "positive"})
+            with open(os.path.join(positive_dir, filename), 'r', encoding='utf-8') as f:
+                text = f.read()
+                positive_reviews.append({"text": preprocess_text(text), "sentiment": "positive"})
         except UnicodeDecodeError:
             print(f"Ошибка чтения файла {filename} в директории положительных отзывов.")
 
     for filename in os.listdir(negative_dir):
         try:
-            file_path = os.path.join(negative_dir, filename)
-            if os.path.isfile(file_path):  # Проверка, является ли это файлом
-                with open(file_path, 'r', encoding='utf-8') as f:
-                    text = f.read()
-                    negative_reviews.append({"text": preprocess_text(text), "sentiment": "negative"})
+            with open(os.path.join(negative_dir, filename), 'r', encoding='utf-8') as f:
+                text = f.read()
+                negative_reviews.append({"text": preprocess_text(text), "sentiment": "negative"})
         except UnicodeDecodeError:
             print(f"Ошибка чтения файла {filename} в директории отрицательных отзывов.")
 
@@ -76,7 +69,7 @@ def analyze_reviews(positive_dir, negative_dir):
     print("Слова, встречающиеся только в отрицательных отзывах:", only_negative)
     print("Общие слова:", common_words)
 
-# Пример использования:
+
 positive_reviews_dir = r"C:\Users\Lenovo\PycharmProjects\Volga_tech_HT1\HW4\reviews\positive"
 negative_reviews_dir = r"C:\Users\Lenovo\PycharmProjects\Volga_tech_HT1\HW4\reviews\negative"
 
