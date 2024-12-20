@@ -1,0 +1,7 @@
+beautifulsoup4
+requests
+lxml
+scikit-learn
+nltk
+vaderSentiment
+matplotlib
